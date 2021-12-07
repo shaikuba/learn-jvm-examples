@@ -34,7 +34,7 @@ public class StackOEExample {
             stackDepth();
         } catch (StackOverflowError error) {
             System.out.println("stack depth :" + stackLength);
-            //error.printStackTrace();
+            error.printStackTrace();
         }
     }
 
@@ -68,9 +68,9 @@ public class StackOEExample {
                 unused126, unused127, unused128;
         stackLength++;
         try {
-//            stackCapacity();
-        } catch (StackOverflowError error) {
             System.out.println("stack depth :" + stackLength);
+            stackCapacity();
+        } catch (StackOverflowError error) {
             System.out.println("stack overflow");
             error.printStackTrace();
         }
@@ -83,8 +83,9 @@ public class StackOEExample {
 
     public void oomByMultiThread() {
         while (true) {
-            new Thread(() -> waitHere()).start();
-            System.out.println("thread count :" + stackLength++);
+            Thread thread = new Thread(() -> waitHere());
+            thread.start();
+            System.out.println("thread count :" + thread.getId());
         }
     }
 

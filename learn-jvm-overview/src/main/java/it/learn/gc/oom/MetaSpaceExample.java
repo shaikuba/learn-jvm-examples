@@ -46,7 +46,6 @@ public class MetaSpaceExample {
             enhancer.setUseCache(false);
             enhancer.setCallback(NoOp.INSTANCE);
             enhancer.create();
-
         }
     }
 }
