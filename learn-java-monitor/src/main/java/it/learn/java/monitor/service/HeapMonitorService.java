@@ -1,9 +1,11 @@
 package it.learn.java.monitor.service;
 
+import it.learn.java.monitor.model.DirtyObj;
+
 public interface HeapMonitorService {
 
-    void heapLeak();
+    void heapLeak(DirtyObj dirtyObj);
 
-    void heapOom();
+    void heapOom(DirtyObj dirtyObj);
     
 }
